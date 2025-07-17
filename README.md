@@ -35,6 +35,16 @@
 5. **Run the developement server**:
    python manage.py runserver
 
+## Setup instructions (using docker)
+1. Ensure Docker is installed.
+
+2. Build and run container
+   docker build -t bookvault .
+   docker run -p 8000:8000 bookvault
+
+3. Access the app in your browser at:
+   https://localhost:8000
+   
 ## Project Structure
 
 bookvault-capstone/
