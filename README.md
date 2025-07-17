@@ -38,11 +38,11 @@
 ## Project Structure
 
 bookvault-capstone/
-├── books/                  # Django app with models, views, templates
-├── docs/                   # Sphinx-generated documentation
-├── media/                  # Uploaded images (ignored by Git)
-├── templates/              # Shared base and auth templates
-├── Dockerfile              # Docker container definition
+├── books/                  
+├── docs/                   
+├── media/                  
+├── templates/              
+├── Dockerfile              
 ├── manage.py
 ├── requirements.txt
 ├── README.md
