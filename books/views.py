@@ -107,7 +107,7 @@ def upload_upcoming_book(request):
 
 
 def upcoming_book_detail(request, pk):
-   '''Display details of an upcoming book.'''
+   """Display details of an upcoming book."""
    book = get_object_or_404(UpcomingBook, pk=pk)
    return render(request, 'books/upcoming_book_detail.html', {'book': book})
 
@@ -115,7 +115,7 @@ def upcoming_book_detail(request, pk):
 from .models import UpcomingBook
 
 def upcoming_books(request):
-    '''Display a list of all upcoming books.'''
+    """Display a list of all upcoming books."""
     upcoming_books = UpcomingBook.objects.all()
     return render(request, 'books/upcoming_books.html', {'upcoming_books': upcoming_books})
 
