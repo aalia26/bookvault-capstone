@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Book(models.Model):
+    """Represents an available book in store."""
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=100)
     description = models.TextField()
@@ -15,6 +16,7 @@ class Book(models.Model):
         return self.title
 
 class Review(models.Model):
+    """Stores the users review on a specific book."""
     book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='reviews')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
@@ -24,6 +26,7 @@ class Review(models.Model):
         return f'Review by {self.user.username} on {self.book.title}'
 
 class Cart(models.Model):
+    """Represents a users shopping cart."""
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='cart')
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -35,6 +38,7 @@ class Cart(models.Model):
         return sum(item.total_price for item in self.items.all())
 
 class CartItem(models.Model):
+    """Shows item in the users shopping cart."""
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='items')
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
@@ -44,6 +48,7 @@ class CartItem(models.Model):
         return self.book.price * self.quantity
 
 class UpcomingBook(models.Model):
+    """Represents a book thats not released as yet."""
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=100)
     release_date = models.DateField()
