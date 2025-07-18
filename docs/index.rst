@@ -15,3 +15,12 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
 
+.. automodule:: books.views
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: books.models
+   :members:   
+   :undoc-members:
+   :show-inheritance:
