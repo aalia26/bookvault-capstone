@@ -10,10 +10,18 @@ Add your content using ``reStructuredText`` syntax. See the
 `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
 documentation for details.
 
+BookVault documentation
+========================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+   api/modules
+   api/bookvault
+
+API Reference
+==============
 
 .. automodule:: books.views
    :members:
